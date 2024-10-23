@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Usa el Dockerfile personalizado
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts:/docker-entrypoint-initdb.d/  # Mapeo del volumen para scripts
+    ports:
+      - "27001:5432"
+
+  airflow:
+    build:
+      context: .
+      dockerfile: globant_pipeline/Dockerfile
+    restart: always
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:123456@postgres:5432/postgres
+    depends_on:
+      - postgres
+    volumes:
+      - ./globant_pipeline:/opt/airflow/dags
+      - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
+      - ./logs:/opt/airflow/logs
+    command: >
+        bash -c "airflow db init &&
+                  airflow users create --username admin --firstname Admin --lastname User --role Admin --email admin@example.com --password admin &&
+                  airflow scheduler &  # Inicia el scheduler en segundo plano
+                  airflow webserver --port 8080 --daemon"  # Ejecuta el webserver en segundo plano
+    ports:
+      - "27002:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 3000M
+        reservations:
+          memory: 256M
+
+  fastapi:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    restart: always
+    depends_on:
+      - postgres
+    ports:
+      - "27003:8000"
+
+volumes:
+  postgres_data:

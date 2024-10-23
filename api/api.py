@@ -4,13 +4,13 @@ from sqlalchemy.orm import sessionmaker
 import pandas as pd
 import os
 
-version = 1
+version = 2
 
 # Crear la app de FastAPI
 app = FastAPI()
 
 # Configuración de la conexión a PostgreSQL
-DATABASE_URL = "postgresql://postgres:123456@127.0.0.1:5432/postgres"
+DATABASE_URL = "postgresql://postgres:123456@postgres:5432/postgres"
 
 # Crear el engine de SQLAlchemy
 engine = create_engine(DATABASE_URL)
