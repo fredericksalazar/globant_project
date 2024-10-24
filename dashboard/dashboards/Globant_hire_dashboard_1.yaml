@@ -1,0 +1,289 @@
+dashboard_title: Globant hire dashboard
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: false
+uuid: c9b356c7-9af2-4fb3-a11e-7b939100f8aa
+position:
+  CHART-0vmh4Fbj4o:
+    children: []
+    id: CHART-0vmh4Fbj4o
+    meta:
+      chartId: 5
+      height: 50
+      sliceName: most_dept_hired_mean_2021
+      uuid: a60752ea-ac21-4cda-ac5c-5a29cbae7220
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-Md_6VZLeY
+    - ROW-bon59Fgm9S
+    type: CHART
+  CHART-86nfrMS7KF:
+    children: []
+    id: CHART-86nfrMS7KF
+    meta:
+      chartId: 4
+      height: 87
+      sliceName: table_hired_dept_job_quarter
+      uuid: a548f9b5-ad6e-4d4f-8bc6-f5c271a16612
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-57f0hE-7B
+    - ROW-2QKoQf2OzU
+    type: CHART
+  CHART-EdqAy3wLyM:
+    children: []
+    id: CHART-EdqAy3wLyM
+    meta:
+      chartId: 2
+      height: 50
+      sliceName: distribution_hired_dept
+      uuid: 06d737ef-7046-49ed-a1a6-146b1f71d573
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-2v8xJqG5tR
+    - ROW-dGfSolp2AL
+    type: CHART
+  CHART-X9pluTtWjr:
+    children: []
+    id: CHART-X9pluTtWjr
+    meta:
+      chartId: 1
+      height: 50
+      sliceName: total_hired_by_month
+      uuid: cd033a57-3f08-4781-9b21-4f54ad52ae26
+      width: 8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-2v8xJqG5tR
+    - ROW-dGfSolp2AL
+    type: CHART
+  CHART-fAUjhw4iQv:
+    children: []
+    id: CHART-fAUjhw4iQv
+    meta:
+      chartId: 3
+      height: 78
+      sliceName: hired_by_dept_job
+      uuid: e2ebf710-86cd-4600-a023-f32460e550bb
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-2v8xJqG5tR
+    - ROW-btGRTdLb4b
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - TABS-hyGtMJA1vS
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Globant hire dashboard
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-2QKoQf2OzU:
+    children:
+    - CHART-86nfrMS7KF
+    id: ROW-2QKoQf2OzU
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-57f0hE-7B
+    type: ROW
+  ROW-bon59Fgm9S:
+    children:
+    - CHART-0vmh4Fbj4o
+    id: ROW-bon59Fgm9S
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-Md_6VZLeY
+    type: ROW
+  ROW-btGRTdLb4b:
+    children:
+    - CHART-fAUjhw4iQv
+    id: ROW-btGRTdLb4b
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-2v8xJqG5tR
+    type: ROW
+  ROW-dGfSolp2AL:
+    children:
+    - CHART-X9pluTtWjr
+    - CHART-EdqAy3wLyM
+    id: ROW-dGfSolp2AL
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    - TAB-2v8xJqG5tR
+    type: ROW
+  TAB-2v8xJqG5tR:
+    children:
+    - ROW-dGfSolp2AL
+    - ROW-btGRTdLb4b
+    id: TAB-2v8xJqG5tR
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: General
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    type: TAB
+  TAB-57f0hE-7B:
+    children:
+    - ROW-2QKoQf2OzU
+    id: TAB-57f0hE-7B
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Hired Dept - job - Quarter
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    type: TAB
+  TAB-Md_6VZLeY:
+    children:
+    - ROW-bon59Fgm9S
+    id: TAB-Md_6VZLeY
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Dept Most Hired Mean 2021
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - TABS-hyGtMJA1vS
+    type: TAB
+  TABS-hyGtMJA1vS:
+    children:
+    - TAB-2v8xJqG5tR
+    - TAB-57f0hE-7B
+    - TAB-Md_6VZLeY
+    id: TABS-hyGtMJA1vS
+    meta: {}
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: TABS
+metadata:
+  chart_configuration:
+    '1':
+      id: 1
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 2
+        - 3
+        - 4
+        - 5
+    '2':
+      id: 2
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 3
+        - 4
+        - 5
+    '3':
+      id: 3
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 4
+        - 5
+    '4':
+      id: 4
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 5
+    '5':
+      id: 5
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 2
+        - 3
+        - 4
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+  color_scheme: ''
+  refresh_frequency: 0
+  shared_label_colors:
+    SUPPORT: '#454E7C'
+    HUMAN RESOURCES: '#FF7F44'
+    ENGINEERING: '#E04355'
+    SERVICES: '#A868B7'
+    BUSINESS DEVELOPMENT: '#A38F79'
+    RESEARCH AND DEVELOPMENT: '#A1A6BD'
+    MARKETING: '#FEC0A1'
+    TRAINING: '#EFA1AA'
+    SALES: '#D3B3DA'
+    LEGAL: '#D1C6BC'
+    PRODUCT MANAGEMENT: '#666666'
+    ACCOUNTING: '#8FD3E4'
+    <NULL>: '#FDE380'
+    COUNT(id): '#1FA8C9'
+  color_scheme_domain: []
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+version: 1.0.0

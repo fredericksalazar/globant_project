@@ -1,0 +1,86 @@
+table_name: most_dept_hired_mean_2021
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: null
+sql: "with hired_by_dept as (\n                                                select\
+  \ \tdepartment_id,\n                                                        department,\n\
+  \                                                        count(*) as hired_by_dept\n\
+  \                                                from \tgold.hired_employees a\n\
+  \                                                where \ta.year = 2021\n       \
+  \                                         group by 1,2\n                       \
+  \                     ),\n                                            mean_hired\
+  \ as (\n                                                select  avg(hired_by_dept)\
+  \ as avg_hired\n                                                from \thired_by_dept\n\
+  \                                            ),\n                              \
+  \              actual_hired as(\n                                              \
+  \  select \tdepartment_id,\n                                                   \
+  \     department,\n                                                        count(*)\
+  \ as total\n                                                from \tgold.hired_employees\n\
+  \                                                group by 1,2\n                \
+  \                            ),\n                                            most_hired\
+  \ as (\n                                                select \t*\n           \
+  \                                     from \tactual_hired a\n                  \
+  \                              where\ta.total > (select avg_hired from mean_hired)\n\
+  \                                            )\n\n                             \
+  \               select *\n                                            from \tmost_hired\n\
+  \                                            order by total desc"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 95065b3e-48d8-46d6-97d2-b5d4a014fef9
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: department_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: total
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: department
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: fc1578f9-a549-4ea6-95ae-2376aef49238

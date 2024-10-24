@@ -18,19 +18,19 @@ with DAG(
     run_bronze_notebook = PapermillOperator(
         task_id='run_bronze_notebook',
         input_nb=os.path.join(globant_pipeline_path, 'load_bronze_data.ipynb'),
-        output_nb=os.path.join(globant_pipeline_path, 'output_load_bronze_data.ipynb')  # archivo de salida
+        output_nb=os.path.join(globant_pipeline_path, 'output_load_bronze_data.ipynb')
     )
 
     run_silver_notebook = PapermillOperator(
         task_id='run_silver_notebook',
         input_nb=os.path.join(globant_pipeline_path, 'load_silver_data.ipynb'),
-        output_nb=os.path.join(globant_pipeline_path, 'output_load_silver_data.ipynb')  # archivo de salida
+        output_nb=os.path.join(globant_pipeline_path, 'output_load_silver_data.ipynb')
     )
 
     run_gold_notebook = PapermillOperator(
         task_id='run_gold_notebook',
         input_nb=os.path.join(globant_pipeline_path, 'load_gold_data.ipynb'),
-        output_nb=os.path.join(globant_pipeline_path, 'output_load_gold_data.ipynb')  # archivo de salida
+        output_nb=os.path.join(globant_pipeline_path, 'output_load_gold_data.ipynb') 
     )
 
     # Definir el flujo de tareas
