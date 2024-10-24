@@ -44,7 +44,7 @@ position:
     id: CHART-EdqAy3wLyM
     meta:
       chartId: 2
-      height: 50
+      height: 76
       sliceName: distribution_hired_dept
       uuid: 06d737ef-7046-49ed-a1a6-146b1f71d573
       width: 4
@@ -60,8 +60,8 @@ position:
     id: CHART-X9pluTtWjr
     meta:
       chartId: 1
-      height: 50
-      sliceName: total_hired_by_month
+      height: 76
+      sliceName: total_hired_by_month_dept
       uuid: cd033a57-3f08-4781-9b21-4f54ad52ae26
       width: 8
     parents:
