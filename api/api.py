@@ -10,7 +10,7 @@ version = 2
 app = FastAPI()
 
 # Configuración de la conexión a PostgreSQL
-DATABASE_URL = "postgresql://postgres:123456@postgres:5432/postgres"
+DATABASE_URL = "postgresql://postgres:123456@127.0.01:5432/postgres"
 
 # Crear el engine de SQLAlchemy
 engine = create_engine(DATABASE_URL)
