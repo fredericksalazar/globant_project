@@ -28,15 +28,11 @@ def get_db():
 @app.get("/hired_employees/")
 def get_hired_employees():
     try:
-        # Conexión directa usando SQLAlchemy
         with engine.connect() as connection:
-            # Ejecutar consulta SQL
             result = connection.execute(text("SELECT * FROM gold.hired_employees")).fetchall()
 
-            # Convertir el resultado en un DataFrame (opcional)
             df = pd.DataFrame(result)
 
-            # Convertir DataFrame a lista de diccionarios
             hired_employees = df.to_dict(orient="records")
 
             return {"data": hired_employees}
@@ -48,9 +44,7 @@ def get_hired_employees():
 @app.get('/total_q_deparment_job')
 def get_total_hired_by_q():
     try:
-        # Conexión directa usando SQLAlchemy
         with engine.connect() as connection:
-            # Ejecutar consulta SQL
             result = connection.execute(text("""SELECT department,
                                                 job,
                                                 COUNT(CASE WHEN quarter = 1 THEN 1 END) AS Q1,
@@ -63,7 +57,6 @@ def get_total_hired_by_q():
                                             ORDER BY department ASC, job ASC;
                                             """)).fetchall()
 
-            # Convertir el resultado en un DataFrame (opcional)
             df = pd.DataFrame(result)
 
             return {"data": df.to_dict(orient="records")}
@@ -75,9 +68,7 @@ def get_total_hired_by_q():
 @app.get('/most_hired_dept')
 def get_most_hired_dept():
     try:
-        # Conexión directa usando SQLAlchemy
         with engine.connect() as connection:
-            # Ejecutar consulta SQL
             result = connection.execute(text("""with hired_by_dept as (
                                                 select 	department_id,
                                                         department,
@@ -108,7 +99,6 @@ def get_most_hired_dept():
                                             order by total desc
                                             """)).fetchall()
 
-            # Convertir el resultado en un DataFrame (opcional)
             df = pd.DataFrame(result)
 
             return {"data": df.to_dict(orient="records")}
